@@ -1,0 +1,17 @@
+--Average Order Value (AOV) By Category
+SELECT 
+    Category,                  -- the column I'm group by
+    SUM(Amount) AS TotalRevenue,   -- aggregation
+    COUNT(OrderID) AS OrderCount,  -- aggregation
+    SUM(Amount) / COUNT(OrderID) AS AverageOrderValue -- calculation
+    GROUP By Category
+
+--Monthly Revenue
+SELECT 
+    "Month",
+    SUM("Amount") AS MonthlyRevenue,
+    COUNT("Order ID") AS MonthlyOrders
+FROM "Amazon Sale Report"
+GROUP BY "Month"
+ORDER BY "Month";
+
